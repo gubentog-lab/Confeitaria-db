@@ -9,7 +9,7 @@ Projeto de banco de dados para auxiliar no gerenciamento de uma confeitaria.
 - Gustavo Bento Gonçalves — RGM 42389401
 - Nicolas Souza Costa — RGM 48204030
 - Guilherme Correia Torres - RGM 48210731
-- [Nome do aluno 4] — RGM [RGM]
+- Charles Henrique da Silva Lima - RGM 48175145
 
 **Curso:** Análise e Desenvolvimento de Sistemas
 
@@ -27,9 +27,9 @@ A LuCakess é uma organização com fins lucrativos que atua no segmento de conf
 
 **CNPJ:** [preencher]
 
-**Instagram:** [@lucakess](https://www.instagram.com/lucakess/)
+**Instagram:** [@lucakess](https://www.instagram.com/lucakess2/)
 
-**Contato:** [preencher]
+**Contato:** (11) 98501-9958
 
 ## Contexto e porte
 
