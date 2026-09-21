@@ -394,7 +394,7 @@ O modelo foi desenvolvido considerando a possibilidade de evolução do sistema 
 
 **Arquivo do DER:** 
 
----
+! [Diagrama Entidade-Relacionamento] (CONFEITARIA&20ER.png)
 
 # 8. Justificativa Técnica
 
