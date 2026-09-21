@@ -25,9 +25,9 @@ A organização escolhida pelo grupo é a **LuCakess**, uma confeitaria independ
 
 A LuCakess é uma organização com fins lucrativos que atua no segmento de confeitaria, trabalhando tanto com produtos de pronta-entrega quanto com pedidos e encomendas realizados previamente pelos clientes.
 
-**CNPJ:** [preencher]
+**CNPJ:** 
 
-**Instagram:** [@lucakess](https://www.instagram.com/lucakess2/)
+**Instagram:** [@lucakess2](https://www.instagram.com/lucakess2/)
 
 **Contato:** (11) 98501-9958
 
@@ -395,7 +395,7 @@ O DER apresenta as entidades, seus atributos, relacionamentos e respectivas card
 
 O modelo foi desenvolvido considerando a possibilidade de evolução do sistema nas próximas etapas do projeto, principalmente em relação ao controle de pedidos, vendas, produtos, ingredientes e estoque.
 
-**Arquivo do DER:** `inserir-nome-do-arquivo.png`
+**Arquivo do DER:** 
 
 ---
 
