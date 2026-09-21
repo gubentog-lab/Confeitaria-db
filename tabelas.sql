@@ -6,13 +6,22 @@ CREATE TABLE clientes (
   obs TEXT
 );
 
+CREATE TABLE ingrediente (
+  id_ingrediente INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(30),
+  quantidade INT,
+  validade DATE,
+  preco_compra DECIMAL(10,2)
+);
+
 CREATE TABLE produtos (
   id_produto INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(30),
   descricao TEXT,
   preco DECIMAL(8,2),
   quantidade INT,
-  validade DATE
+  validade DATE,
+  id_ingrediente INT FOREIGN KEY
 ;
 
 CREATE TABLE venda (
@@ -20,14 +29,6 @@ CREATE TABLE venda (
   data_venda DATETIME,
   valor_total DECIMAL(10,2),
   forma_pagamento VARCHAR(20)
-);
-
-CREATE TABLE ingrediente (
-  id_ingrediente INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(30),
-  quantidade INT,
-  validade DATE,
-  preco_compra DECIMAL(10,2)
 );
 
 CREATE TABLE historico_ingrediente (
