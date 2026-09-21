@@ -69,11 +69,11 @@ A existência da organização e o acesso do grupo para realização da pesquisa
 - Conversa com o proprietário da organização;
 - Informações públicas da organização em redes sociais e serviços de localização.
 
-**Instagram:** [@lucakess](https://www.instagram.com/lucakess/)
+**Instagram:** [@lucakess2](https://www.instagram.com/lucakess2/)
 
-**Google Maps:** [inserir link]
+**Google Maps:** https://maps.app.goo.gl/Zy8aPC7NhboGfnR7A
 
-**Contato da organização:** [preencher]
+**Contato da organização:** (11) 98501-9958
 
 ---
 
