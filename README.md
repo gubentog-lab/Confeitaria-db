@@ -440,18 +440,21 @@ Dessa maneira, o modelo procura equilibrar simplicidade e capacidade de expansã
 
 # 9. Uso de Inteligência Artificial
 
-> **Preencher posteriormente pelo grupo.**
+Durante o desenvolvimento desta entrega, o grupo utilizou ferramentas de Inteligência Artificial como recurso de apoio à organização e estruturação do projeto.
 
-Nesta seção deverá ser apresentada a documentação preparada pelo grupo sobre o uso de Inteligência Artificial no desenvolvimento do projeto.
+A IA foi utilizada principalmente para auxiliar na **estruturação do repositório no GitHub**, organização do conteúdo do `README.md` e formatação em Markdown.
+Também foi utilizada como apoio para revisar a organização das informações relacionadas à modelagem conceitual e requisitos. As sugestões fornecidas pela ferramenta foram analisadas pelo grupo e adaptadas de acordo com as informações obtidas durante a pesquisa de campo e com as necessidades identificadas na organização.
 
-A documentação deverá incluir:
+A Inteligência Artificial não foi utilizada como substituta da pesquisa de campo ou das decisões do grupo. As informações referentes à organização, seus processos e necessidades foram obtidas por meio da pesquisa realizada pelo grupo e posteriormente utilizadas na construção do modelo.
 
-- Ferramenta de Inteligência Artificial utilizada;
-- Etapa do projeto em que a IA foi utilizada;
-- Motivação para utilização da ferramenta;
-- Prompts utilizados;
-- Respostas recebidas;
-- Fontes verificadas;
-- Trechos rejeitados ou corrigidos;
-- Justificativa das decisões tomadas pelo grupo;
-- Reflexão crítica sobre o uso da Inteligência Artificial.
+## Ferramenta utilizada
+
+**Ferramenta:** ChatGPT
+
+**Principais utilizações:**
+
+- Auxílio na estruturação e organização do `README.md`;
+- Orientação sobre a organização dos arquivos no GitHub;
+- Auxílio na formatação do documento em Markdown;
+
+As sugestões geradas pela IA foram revisadas e validadas pelos integrantes do grupo antes de serem incorporadas ao projeto.
