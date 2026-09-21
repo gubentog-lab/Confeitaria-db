@@ -1,9 +1,6 @@
 # Confeitaria-db
 Projeto de banco de dados para auxiliar no gerenciamento de uma confeitaria.
 # Entrega 1 — Modelo Conceitual (DER)
-
-## Metadados
-
 ### Integrantes
 
 - Gustavo Bento Gonçalves — RGM 42389401
