@@ -211,16 +211,12 @@ O dicionário de dados será desenvolvido separadamente em **HTML**, conforme so
 As entidades contempladas no modelo atual são:
 
 - CLIENTE
-- PEDIDO
-- ITEM_PEDIDO
-- PRODUTO
-- ITEM_VENDA
-- VENDA
-- INGREDIENTE
-- HISTORICO_INGREDIENTE
-- HISTORICO_ESTOQUE
+- PED## 5. Dicionário de Dados Conceitual
 
-O documento HTML apresentará, para cada entidade, seus respectivos atributos, descrições e regras de negócio associadas.
+O dicionário de dados apresenta as entidades, atributos, descrições,
+chaves e regras relacionadas ao modelo conceitual do sistema.
+
+**[Acessar o Dicionário de Dados em HTML](dicionario-dados.html)**
 
 ---
 
