@@ -353,7 +353,7 @@ O modelo foi desenvolvido considerando a possibilidade de evolução do sistema 
 
 **Arquivo do DER:** 
 
-![Diagrama Entidade-Relacionamento](confeitaria-er.png)
+![Diagrama Entidade-Relacionamento](confeitaria-er.pdf)
 
 ---
 
