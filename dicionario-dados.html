@@ -181,16 +181,6 @@
             font-weight: bold;
         }
 
-        .fk {
-            display: inline-block;
-            background: #bde0fe;
-            color: #174a70;
-            padding: 3px 7px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-
         .regra {
             margin-top: 30px;
             background: var(--rosa-claro);
@@ -239,6 +229,645 @@
                 padding-right: 18px;
             }
         }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dicionário de Dados</h1>
+    <p>Projeto Confeitaria-db — LuCakess</p>
+</header>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Sobre o documento</h2>
+
+        <p>
+            Este documento apresenta o Dicionário de Dados Conceitual
+            preliminar do projeto <strong>Confeitaria-db</strong>, desenvolvido
+            para auxiliar no gerenciamento das informações da confeitaria
+            <strong>LuCakess</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            O dicionário descreve as entidades identificadas no modelo
+            conceitual, seus respectivos atributos, finalidades e
+            relacionamentos com outras entidades do sistema.
+        </p>
+    </section>
+
+
+    <section class="indice">
+        <h2>Entidades</h2>
+
+        <ul>
+            <li><a href="#cliente">CLIENTE</a></li>
+            <li><a href="#pedido">PEDIDO</a></li>
+            <li><a href="#venda">VENDA</a></li>
+            <li><a href="#produto">PRODUTO</a></li>
+            <li><a href="#ingrediente">INGREDIENTE</a></li>
+            <li><a href="#historico-ingrediente">HISTORICO_INGREDIENTE</a></li>
+            <li><a href="#historico-estoque">HISTORICO_ESTOQUE</a></li>
+        </ul>
+    </section>
+
+
+    <!-- CLIENTE -->
+
+    <section class="entidade" id="cliente">
+
+        <div class="entidade-header">
+            <h2>CLIENTE</h2>
+            <span>Cadastro de clientes</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Representa as pessoas que realizam pedidos ou mantêm
+                relacionamento comercial com a confeitaria.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_cliente</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada cliente cadastrado.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>nome</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Nome completo do cliente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>telefone</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Número de telefone utilizado para contato com o cliente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>endereco</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Endereço utilizado para entrega ou cadastro do cliente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>observacoes</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Informações adicionais relacionadas ao cliente.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- PEDIDO -->
+
+    <section class="entidade" id="pedido">
+
+        <div class="entidade-header">
+            <h2>PEDIDO</h2>
+            <span>Registro de encomendas e solicitações</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Representa uma solicitação ou encomenda realizada por um
+                cliente, independentemente de sua entrega ou retirada já
+                ter ocorrido.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_pedido</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada pedido.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>data_pedido</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data em que o pedido foi realizado.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>data_entrega</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data prevista ou definida para entrega ou retirada.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>endereco_entrega</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Endereço onde o pedido deverá ser entregue.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>tema</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Tema ou característica específica solicitada pelo cliente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>observacoes</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Informações adicionais referentes ao pedido.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>valor_total</code></td>
+                        <td>Decimal</td>
+                        <td>—</td>
+                        <td>Valor total do pedido.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>status</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Situação atual do pedido, como pendente, em produção, pronto ou concluído.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- VENDA -->
+
+    <section class="entidade" id="venda">
+
+        <div class="entidade-header">
+            <h2>VENDA</h2>
+            <span>Registro das operações de venda</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Representa uma operação de venda realizada pela confeitaria,
+                especialmente para produtos de pronta-entrega.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_venda</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada venda.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>data_venda</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data em que a venda foi realizada.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>valor_total</code></td>
+                        <td>Decimal</td>
+                        <td>—</td>
+                        <td>Valor total da venda.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>forma_pagamento</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Forma de pagamento utilizada na venda.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- PRODUTO -->
+
+    <section class="entidade" id="produto">
+
+        <div class="entidade-header">
+            <h2>PRODUTO</h2>
+            <span>Produtos comercializados</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Representa os produtos comercializados pela confeitaria,
+                incluindo produtos de pronta-entrega.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_produto</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada produto.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>nome</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Nome comercial do produto.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>descricao</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Descrição e características do produto.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>preco</code></td>
+                        <td>Decimal</td>
+                        <td>—</td>
+                        <td>Preço atual de comercialização do produto.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>quantidade</code></td>
+                        <td>Inteiro</td>
+                        <td>—</td>
+                        <td>Quantidade atualmente disponível em estoque.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>validade</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data de validade do produto, quando aplicável.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- INGREDIENTE -->
+
+    <section class="entidade" id="ingrediente">
+
+        <div class="entidade-header">
+            <h2>INGREDIENTE</h2>
+            <span>Controle de ingredientes</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Representa os ingredientes utilizados pela confeitaria
+                durante a produção dos produtos.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_ingrediente</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada ingrediente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>nome</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Nome do ingrediente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>quantidade</code></td>
+                        <td>Inteiro</td>
+                        <td>—</td>
+                        <td>Quantidade atualmente disponível do ingrediente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>validade</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data de validade do ingrediente.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>preco_compra</code></td>
+                        <td>Decimal</td>
+                        <td>—</td>
+                        <td>Preço pago na aquisição do ingrediente.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- HISTORICO INGREDIENTE -->
+
+    <section class="entidade" id="historico-ingrediente">
+
+        <div class="entidade-header">
+            <h2>HISTORICO_INGREDIENTE</h2>
+            <span>Histórico de movimentações de ingredientes</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Registra as movimentações relacionadas ao estoque de
+                ingredientes, permitindo manter um histórico das alterações.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_historico</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada registro histórico.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>tipo</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Tipo da movimentação, como entrada, saída, perda ou ajuste.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>quantidade</code></td>
+                        <td>Inteiro</td>
+                        <td>—</td>
+                        <td>Quantidade movimentada.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>data</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data em que a movimentação ocorreu.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>motivo</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Motivo responsável pela movimentação.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>observacao</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Informações adicionais relacionadas à movimentação.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- HISTORICO ESTOQUE -->
+
+    <section class="entidade" id="historico-estoque">
+
+        <div class="entidade-header">
+            <h2>HISTORICO_ESTOQUE</h2>
+            <span>Histórico de movimentações de produtos</span>
+        </div>
+
+        <div class="descricao">
+            <p>
+                Registra as movimentações realizadas no estoque de produtos,
+                preservando o histórico das alterações de quantidade.
+            </p>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo conceitual</th>
+                        <th>Chave</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><code>id_historico</code></td>
+                        <td>Inteiro</td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identifica unicamente cada registro histórico.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>tipo</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Tipo da movimentação, como entrada, saída, perda ou ajuste.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>quantidade</code></td>
+                        <td>Inteiro</td>
+                        <td>—</td>
+                        <td>Quantidade movimentada no estoque.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>data</code></td>
+                        <td>Data</td>
+                        <td>—</td>
+                        <td>Data em que a movimentação ocorreu.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>motivo</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Motivo responsável pela movimentação.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>observacao</code></td>
+                        <td>Texto</td>
+                        <td>—</td>
+                        <td>Informações adicionais relacionadas à movimentação.</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- REGRAS -->
+
+    <section class="regra">
+
+        <h2>Regras gerais do modelo</h2>
+
+        <ul>
+
+            <li>
+                Cada entidade possui um identificador próprio para permitir
+                sua identificação no sistema.
+            </li>
+
+            <li>
+                Os relacionamentos entre as entidades são representados
+                diretamente no modelo conceitual, sem a utilização de
+                entidades intermediárias de itens.
+            </li>
+
+            <li>
+                Os atributos relacionados a pedidos e vendas representam
+                as informações necessárias para registrar essas operações.
+            </li>
+
+            <li>
+                A quantidade armazenada em <code>PRODUTO</code> representa
+                o estoque atual, enquanto <code>HISTORICO_ESTOQUE</code>
+                preserva as movimentações anteriores.
+            </li>
+
+            <li>
+                Da mesma forma, <code>INGREDIENTE</code> representa a
+                situação atual do estoque de ingredientes e
+                <code>HISTORICO_INGREDIENTE</code> registra seu histórico.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p><strong>Confeitaria-db</strong></p>
+
+    <p>
+        Projeto acadêmico — Análise e Desenvolvimento de Sistemas
+    </p>
+
+    <p>
+        LuCakess — Dicionário de Dados Conceitual
+    </p>
+
+</footer>
+
+</body>
+</html>
     </style>
 </head>
 
@@ -1032,13 +1661,6 @@
                 situação atual do estoque de ingredientes e
                 <code>HISTORICO_INGREDIENTE</code> registra seu histórico.
             </li>
-
-            <li>
-                <code>ITEM_PEDIDO</code> e <code>ITEM_VENDA</code> permitem
-                representar a relação entre operações e produtos,
-                armazenando quantidade, preço unitário e subtotal.
-            </li>
-
         </ul>
 
     </section>
