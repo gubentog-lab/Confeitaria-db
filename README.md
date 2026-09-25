@@ -1,5 +1,6 @@
 # Confeitaria-db
 Projeto de banco de dados para auxiliar no gerenciamento de uma confeitaria.
+
 # Entrega 1 — Modelo Conceitual (DER)
 ### Integrantes
 
@@ -127,8 +128,8 @@ Os fluxogramas dos principais processos serão anexados separadamente ao reposit
 | RF03 | O sistema deve permitir cadastrar ingredientes. |
 | RF04 | O sistema deve permitir registrar vendas. |
 | RF05 | O sistema deve permitir registrar pedidos. |
-| RF06 | O sistema deve permitir adicionar produtos aos pedidos. |
-| RF07 | O sistema deve permitir adicionar produtos às vendas. |
+| RF06 | O sistema deve permitir relacionar produtos aos pedidos. |
+| RF07 | O sistema deve permitir relacionar produtos às vendas. |
 | RF08 | O sistema deve permitir controlar a quantidade disponível dos produtos. |
 | RF09 | O sistema deve permitir controlar a quantidade disponível dos ingredientes. |
 | RF10 | O sistema deve permitir registrar movimentações de estoque de produtos. |
@@ -166,7 +167,7 @@ Os fluxogramas dos principais processos serão anexados separadamente ao reposit
 
 **RN04.** Um pedido pode possuir vários produtos, e um mesmo produto pode aparecer em diferentes pedidos.
 
-**RN05.** O pedido deve armazenar a quantidade e o preço praticado para cada produto no momento do pedido.
+**RN05.** O pedido deve armazenar as informações referentes aos produtos, suas quantidades e os valores praticados no momento do pedido.
 
 **RN06.** O pedido possui uma data de realização e pode possuir uma data prevista para entrega ou retirada.
 
@@ -178,7 +179,7 @@ Os fluxogramas dos principais processos serão anexados separadamente ao reposit
 
 **RN10.** Cada venda deve possuir data, valor total e forma de pagamento.
 
-**RN11.** O preço registrado no item da venda representa o valor praticado no momento da operação, independentemente de alterações posteriores no preço atual do produto.
+**RN11.** O preço registrado na venda representa o valor praticado no momento da operação, independentemente de alterações posteriores no preço atual do produto.
 
 **RN12.** Produtos disponíveis para comercialização possuem uma quantidade controlada em estoque.
 
@@ -204,17 +205,9 @@ As informações dos clientes também devem ser tratadas de maneira adequada, ev
 
 ---
 
-# 5. Dicionário de Dados Conceitual (Preliminar)
+# 5. Dicionário de Dados Conceitual
 
-O dicionário de dados será desenvolvido separadamente em **HTML**, conforme solicitado na entrega.
-
-As entidades contempladas no modelo atual são:
-
-- CLIENTE
-- PED## 5. Dicionário de Dados Conceitual
-
-O dicionário de dados apresenta as entidades, atributos, descrições,
-chaves e regras relacionadas ao modelo conceitual do sistema.
+O dicionário de dados apresenta as entidades, atributos, descrições, chaves e regras relacionadas ao modelo conceitual do sistema.
 
 **[Acessar o Dicionário de Dados em HTML](dicionario-dados.html)**
 
@@ -244,28 +237,15 @@ Representa uma solicitação ou encomenda realizada por um cliente, independente
 
 - `id_pedido`
 - `id_cliente`
+- `id_produto`
 - `data_pedido`
 - `data_entrega`
 - `endereco_entrega`
 - `tema`
 - `observacoes`
+- `quantidade`
 - `valor_total`
 - `status`
-
-### ITEM_PEDIDO
-
-Representa cada produto incluído em um pedido.
-
-**Principais atributos:**
-
-- `id_item`
-- `id_pedido`
-- `id_produto`
-- `quantidade`
-- `preco_unitario`
-- `subtotal`
-
-A entidade funciona como associação entre PEDIDO e PRODUTO, permitindo que um pedido possua vários produtos e que um produto esteja presente em diversos pedidos.
 
 ### PRODUTO
 
@@ -289,26 +269,13 @@ Representa uma operação de venda realizada pela confeitaria.
 **Principais atributos:**
 
 - `id_venda`
+- `id_produto`
 - `data_venda`
+- `quantidade`
 - `valor_total`
 - `forma_pagamento`
 
 A entidade permite registrar vendas de produtos de pronta-entrega realizadas presencialmente.
-
-### ITEM_VENDA
-
-Representa os produtos que compõem uma venda.
-
-**Principais atributos:**
-
-- `id_item`
-- `id_venda`
-- `id_produto`
-- `quantidade`
-- `preco_unitario`
-- `subtotal`
-
-Assim como ITEM_PEDIDO, funciona como entidade associativa entre uma operação e os produtos envolvidos.
 
 ### INGREDIENTE
 
@@ -357,16 +324,12 @@ Representa as movimentações relacionadas ao estoque de ingredientes.
 O modelo estabelece os seguintes relacionamentos principais:
 
 - **CLIENTE realiza PEDIDO:** um cliente pode realizar vários pedidos, enquanto cada pedido está associado a um cliente.
-- **PEDIDO possui ITEM_PEDIDO:** um pedido possui um ou mais itens.
-- **ITEM_PEDIDO referencia PRODUTO:** cada item representa um produto incluído no pedido.
-- **VENDA possui ITEM_VENDA:** uma venda pode conter vários itens.
-- **ITEM_VENDA referencia PRODUTO:** cada item de venda está relacionado a um produto.
+- **PEDIDO possui PRODUTO:** um pedido está relacionado a um ou mais produtos.
+- **VENDA possui PRODUTO:** uma venda está relacionada a um ou mais produtos.
 - **PRODUTO possui HISTORICO_ESTOQUE:** um produto pode possuir diversas movimentações registradas em seu histórico.
 - **INGREDIENTE possui HISTORICO_INGREDIENTE:** um ingrediente pode possuir diversas movimentações registradas em seu histórico.
 
-Os relacionamentos entre PEDIDO e PRODUTO e entre VENDA e PRODUTO são representados por entidades associativas, respectivamente ITEM_PEDIDO e ITEM_VENDA.
-
-Essa estrutura permite armazenar informações específicas de cada ocorrência, como quantidade, preço unitário e subtotal.
+Os relacionamentos entre PEDIDO e PRODUTO e entre VENDA e PRODUTO são realizados diretamente, sem a utilização de entidades intermediárias.
 
 ## Restrições e políticas organizacionais aplicadas ao modelo
 
@@ -392,6 +355,8 @@ O modelo foi desenvolvido considerando a possibilidade de evolução do sistema 
 
 ![Diagrama Entidade-Relacionamento](confeitaria-er.png)
 
+---
+
 # 8. Justificativa Técnica
 
 A modelagem foi construída a partir dos processos observados na LuCakess durante a pesquisa de campo e busca representar os principais dados necessários para o gerenciamento das operações da organização.
@@ -404,13 +369,9 @@ O pedido representa uma solicitação que pode estar em diferentes etapas de ate
 
 Dessa forma, um pedido não depende necessariamente da realização da entrega para existir no sistema.
 
-As entidades **ITEM_PEDIDO** e **ITEM_VENDA** foram utilizadas para representar os produtos associados às respectivas operações.
+Os relacionamentos entre **PEDIDO e PRODUTO** e entre **VENDA e PRODUTO** foram representados diretamente no modelo, evitando a criação de entidades intermediárias específicas para essas associações.
 
-Essa decisão permite representar adequadamente as associações entre pedidos, vendas e produtos e armazenar informações específicas de cada ocorrência, como quantidade, preço unitário e subtotal.
-
-O atributo `preco_unitario` foi mantido nas entidades ITEM_PEDIDO e ITEM_VENDA mesmo com a existência do atributo `preco` em PRODUTO.
-
-A decisão permite preservar o preço praticado no momento da operação, evitando que uma alteração futura no preço atual do produto altere o histórico de pedidos ou vendas anteriores.
+As informações relacionadas à quantidade e aos valores dos produtos são consideradas dentro dos respectivos registros de pedido ou venda, permitindo identificar os produtos envolvidos em cada operação.
 
 A entidade **PRODUTO** concentra as informações dos produtos comercializados e também mantém sua quantidade disponível.
 
@@ -428,7 +389,7 @@ As cardinalidades foram definidas de acordo com a forma como os processos da org
 
 Um cliente pode realizar diversos pedidos, enquanto cada pedido pertence a um cliente.
 
-Pedidos e vendas podem possuir diversos produtos, sendo os itens utilizados para representar essa associação e armazenar as informações específicas de cada produto dentro da operação.
+Pedidos e vendas podem possuir diversos produtos, sendo estabelecidos relacionamentos diretos entre essas entidades.
 
 Dessa maneira, o modelo procura equilibrar simplicidade e capacidade de expansão, mantendo separadas as principais responsabilidades de cada entidade e permitindo que novas funcionalidades sejam adicionadas nas próximas etapas do projeto.
 
@@ -439,6 +400,7 @@ Dessa maneira, o modelo procura equilibrar simplicidade e capacidade de expansã
 Durante o desenvolvimento desta entrega, o grupo utilizou ferramentas de Inteligência Artificial como recurso de apoio à organização e estruturação do projeto.
 
 A IA foi utilizada principalmente para auxiliar na **estruturação do repositório no GitHub**, organização do conteúdo do `README.md` e formatação em Markdown.
+
 Também foi utilizada como apoio para revisar a organização das informações relacionadas à modelagem conceitual e requisitos. As sugestões fornecidas pela ferramenta foram analisadas pelo grupo e adaptadas de acordo com as informações obtidas durante a pesquisa de campo e com as necessidades identificadas na organização.
 
 A Inteligência Artificial não foi utilizada como substituta da pesquisa de campo ou das decisões do grupo. As informações referentes à organização, seus processos e necessidades foram obtidas por meio da pesquisa realizada pelo grupo e posteriormente utilizadas na construção do modelo.
