@@ -23,7 +23,7 @@ A organização escolhida pelo grupo é a **LuCakess**, uma confeitaria independ
 
 A LuCakess é uma organização com fins lucrativos que atua no segmento de confeitaria, trabalhando tanto com produtos de pronta-entrega quanto com pedidos e encomendas realizados previamente pelos clientes.
 
-**CNPJ:** 
+**CNPJ:** 66.950.123/0001-00
 
 **Instagram:** [@lucakess2](https://www.instagram.com/lucakess2/)
 
@@ -40,6 +40,20 @@ A confeitaria trabalha com produtos de pronta-entrega, como cookies e outros pro
 A aquisição de ingredientes e insumos ocorre periodicamente, aproximadamente a cada quinze dias, de acordo com a necessidade da operação.
 
 ## Problemas e necessidades identificados
+
+Durante a pesquisa de campo, o grupo identificou os seguintes problemas na operação da LuCakess:
+
+*P1 — Falta de centralização das informações:* Uma parcela significativa da operação é realizada por meio do WhatsApp, dificultando a organização e a consulta de informações sobre clientes e pedidos.
+
+*P2 — Controle de estoque pouco estruturado:* A confeitaria não possui um sistema centralizado para acompanhar precisamente as quantidades disponíveis de produtos e ingredientes.
+
+*P3 — Ausência de histórico organizado de movimentações:* As entradas, saídas, perdas e ajustes de produtos e ingredientes precisam ser registrados de maneira estruturada para permitir consultas posteriores.
+
+*P4 — Falta de registro estruturado das vendas presenciais:* Os produtos de pronta-entrega, como cookies, são comercializados presencialmente, mas não existe um mecanismo centralizado para registrar essas vendas e atualizar o estoque.
+
+*P5 — Dificuldade de acompanhamento dos pedidos:* A utilização de diferentes canais para registrar encomendas pode dificultar o acompanhamento de datas, produtos, quantidades, entregas e status dos pedidos.
+
+O banco de dados proposto busca solucionar esses problemas por meio da centralização das informações e do registro organizado das operações da confeitaria.
 
 Durante a pesquisa de campo, o grupo identificou que uma parcela significativa da operação da confeitaria é realizada por meio do **WhatsApp**, sem a utilização de um sistema centralizado para organização das informações.
 
