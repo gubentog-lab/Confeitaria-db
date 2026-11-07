@@ -4,10 +4,10 @@ Projeto de banco de dados para auxiliar no gerenciamento de uma confeitaria.
 # Entrega 1 — Modelo Conceitual (DER)
 ### Integrantes
 
-- Gustavo Bento Gonçalves — RGM 42389401 / GitHub - 
-- Nicolas Souza Costa — RGM 48204030
-- Guilherme Correia Torres - RGM 48210731
-- Charles Henrique da Silva Lima - RGM 48175145
+- Gustavo Bento Gonçalves — RGM 42389401 / GitHub - gubentog-lab
+- Nicolas Souza Costa — RGM 48204030 / GitHub - nikisevenx-cmd
+- Guilherme Correia Torres - RGM 48210731 / GitHub - Guilherme568-art
+- Charles Henrique da Silva Lima - RGM 48175145 / GitHub - charles-dev01
 
 **Curso:** Análise e Desenvolvimento de Sistemas
 
