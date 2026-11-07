@@ -359,39 +359,23 @@ O modelo foi desenvolvido considerando a possibilidade de evolução do sistema 
 
 # 8. Justificativa Técnica
 
-A modelagem foi construída a partir dos processos observados na LuCakess durante a pesquisa de campo e busca representar os principais dados necessários para o gerenciamento das operações da organização.
+A modelagem foi desenvolvida com base nos processos identificados na LuCakess, buscando organizar as informações relacionadas aos clientes, pedidos, vendas, produtos, ingredientes e controle de estoque.
 
-A entidade **CLIENTE** foi definida para centralizar os dados dos consumidores que realizam pedidos. Sua separação em relação à entidade PEDIDO permite que um mesmo cliente possua diversos pedidos ao longo do tempo sem necessidade de duplicar suas informações.
+A entidade *CLIENTE* permite centralizar as informações dos consumidores, evitando a repetição de dados em diferentes pedidos. A entidade *PEDIDO* representa as encomendas realizadas pelos clientes, enquanto *VENDA* registra as operações de comercialização, principalmente as vendas presenciais de produtos de pronta-entrega.
 
-A entidade **PEDIDO** representa as encomendas realizadas pelos clientes. Ela foi mantida separada de VENDA porque os dois conceitos possuem finalidades distintas dentro do processo observado.
+Foram criadas as entidades associativas *ITEM_PEDIDO* e *ITEM_VENDA* para representar os produtos presentes em cada operação. Elas permitem registrar informações como quantidade e preço unitário, resolvendo os relacionamentos muitos-para-muitos entre pedidos e produtos e entre vendas e produtos.
 
-O pedido representa uma solicitação que pode estar em diferentes etapas de atendimento, enquanto a venda representa uma operação de comercialização registrada.
+A entidade *PRODUTO_INGREDIENTE* representa a relação entre os produtos e os ingredientes utilizados em sua produção. Essa estrutura permite registrar quais ingredientes compõem cada produto e as respectivas quantidades utilizadas.
 
-Dessa forma, um pedido não depende necessariamente da realização da entrega para existir no sistema.
+A entidade *PRODUTO* mantém as informações dos produtos comercializados e suas quantidades disponíveis. Já *INGREDIENTE* armazena os dados dos insumos utilizados na produção.
 
-Os relacionamentos entre **PEDIDO e PRODUTO** e entre **VENDA e PRODUTO** foram representados diretamente no modelo, evitando a criação de entidades intermediárias específicas para essas associações.
+As entidades *HISTORICO_ESTOQUE* e *HISTORICO_INGREDIENTE* foram separadas para preservar as movimentações de produtos e ingredientes. Cada histórico está relacionado diretamente à sua respectiva entidade, permitindo registrar datas, quantidades, motivos e observações das movimentações.
 
-As informações relacionadas à quantidade e aos valores dos produtos são consideradas dentro dos respectivos registros de pedido ou venda, permitindo identificar os produtos envolvidos em cada operação.
+A utilização de identificadores próprios nas entidades permite diferenciar os registros e estabelecer relacionamentos por meio de chaves estrangeiras no modelo lógico. As entidades associativas utilizam identificadores e relacionamentos adequados para manter a integridade dos dados.
 
-A entidade **PRODUTO** concentra as informações dos produtos comercializados e também mantém sua quantidade disponível.
+Também são necessárias restrições de integridade, como campos obrigatórios, valores únicos quando aplicável e verificações para impedir quantidades e preços negativos.
 
-Essa estrutura é importante para representar os produtos de pronta-entrega, que precisam ter suas unidades controladas conforme as vendas realizadas.
-
-A entidade **HISTORICO_ESTOQUE** foi criada separadamente de PRODUTO para preservar as movimentações realizadas.
-
-Enquanto PRODUTO representa o estado atual do estoque, HISTORICO_ESTOQUE permite registrar alterações anteriores, incluindo tipo, quantidade, data, motivo e observação.
-
-De forma semelhante, **INGREDIENTE** representa os ingredientes disponíveis para utilização na produção, enquanto **HISTORICO_INGREDIENTE** permite preservar o histórico das movimentações desses itens.
-
-A separação entre dados atuais e dados históricos permite maior rastreabilidade e fornece uma base mais adequada para futuras funcionalidades de consulta, controle de estoque e análise das operações.
-
-As cardinalidades foram definidas de acordo com a forma como os processos da organização funcionam.
-
-Um cliente pode realizar diversos pedidos, enquanto cada pedido pertence a um cliente.
-
-Pedidos e vendas podem possuir diversos produtos, sendo estabelecidos relacionamentos diretos entre essas entidades.
-
-Dessa maneira, o modelo procura equilibrar simplicidade e capacidade de expansão, mantendo separadas as principais responsabilidades de cada entidade e permitindo que novas funcionalidades sejam adicionadas nas próximas etapas do projeto.
+Dessa forma, o modelo busca reduzir a dependência de controles manuais, melhorar a organização das informações e permitir consultas sobre pedidos, vendas e movimentações de estoque.
 
 ---
 
