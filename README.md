@@ -414,3 +414,23 @@ A Inteligência Artificial não foi utilizada como substituta da pesquisa de cam
 - Auxílio na formatação do documento em Markdown;
 
 As sugestões geradas pela IA foram revisadas e validadas pelos integrantes do grupo antes de serem incorporadas ao projeto.
+
+# 8. Justificativa Técnica
+
+A modelagem foi desenvolvida com base nos processos identificados na LuCakess, buscando organizar as informações relacionadas aos clientes, pedidos, vendas, produtos, ingredientes e controle de estoque.
+
+A entidade **CLIENTE** permite centralizar as informações dos consumidores, evitando a repetição de dados em diferentes pedidos. A entidade **PEDIDO** representa as encomendas realizadas pelos clientes, enquanto **VENDA** registra as operações de comercialização, principalmente as vendas presenciais de produtos de pronta-entrega.
+
+Foram criadas as entidades associativas **ITEM_PEDIDO** e **ITEM_VENDA** para representar os produtos presentes em cada operação. Elas permitem registrar informações como quantidade e preço unitário, resolvendo os relacionamentos muitos-para-muitos entre pedidos e produtos e entre vendas e produtos.
+
+A entidade **PRODUTO_INGREDIENTE** representa a relação entre os produtos e os ingredientes utilizados em sua produção. Essa estrutura permite registrar quais ingredientes compõem cada produto e as respectivas quantidades utilizadas.
+
+A entidade **PRODUTO** mantém as informações dos produtos comercializados e suas quantidades disponíveis. Já **INGREDIENTE** armazena os dados dos insumos utilizados na produção.
+
+As entidades **HISTORICO_ESTOQUE** e **HISTORICO_INGREDIENTE** foram separadas para preservar as movimentações de produtos e ingredientes. Cada histórico está relacionado diretamente à sua respectiva entidade, permitindo registrar datas, quantidades, motivos e observações das movimentações.
+
+A utilização de identificadores próprios nas entidades permite diferenciar os registros e estabelecer relacionamentos por meio de chaves estrangeiras no modelo lógico. As entidades associativas utilizam identificadores e relacionamentos adequados para manter a integridade dos dados.
+
+Também são necessárias restrições de integridade, como campos obrigatórios, valores únicos quando aplicável e verificações para impedir quantidades e preços negativos.
+
+Dessa forma, o modelo busca reduzir a dependência de controles manuais, melhorar a organização das informações e permitir consultas sobre pedidos, vendas e movimentações de estoque.
